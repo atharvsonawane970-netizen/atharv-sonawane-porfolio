@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2ec">
+  <meta name="description" content="Atharv Sonawane — equity research, financial valuation and analytical writing.">
+  <title>Atharv Sonawane — Equity Research & Finance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f2ec;
+      --paper-deep: #ebe6dc;
+      --ink: #20232b;
+      --ink-soft: #555a64;
+      --muted: #747984;
+      --line: #d9d4ca;
+      --accent: #c75537;
+      --accent-deep: #a9442b;
+      --dark: #202a34;
+      --white: #fffdf8;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Plus Jakarta Sans", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", monospace;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.7 var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .skip-link { position: absolute; top: -48px; left: 16px; z-index: 20; padding: 8px 12px; background: var(--ink); color: var(--white); }
+    .skip-link:focus { top: 12px; }
+    .site-nav { position: sticky; top: 0; z-index: 10; background: #f5f2ecef; backdrop-filter: blur(14px); border-bottom: 1px solid #20232b12; }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 13px; font-weight: 800; letter-spacing: -.04em; text-transform: uppercase; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: var(--ink-soft); font-size: 12px; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { border: 1px solid var(--ink); padding: 9px 14px; border-radius: 3px; font: 10px var(--mono); letter-spacing: .04em; text-transform: uppercase; transition: .2s; }
+    .nav-cta:hover { background: var(--ink); color: var(--white); }
+    .hero { padding: 82px 0 76px; display: grid; grid-template-columns: 1.22fr .78fr; gap: 56px; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--accent); font: 10px var(--mono); letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    h1 { margin: 22px 0 18px; max-width: 730px; font: 400 clamp(58px, 8vw, 102px)/.94 var(--serif); letter-spacing: -.045em; }
+    h1 em { color: var(--accent); font-weight: 400; }
+    .hero-copy { max-width: 610px; color: var(--ink-soft); font-size: 16px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin: 27px 0 0; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 0 17px; border: 1px solid var(--ink); font-size: 11px; font-weight: 700; transition: .2s; }
+    .button-primary { background: var(--ink); color: var(--white); }
+    .button-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .button-secondary { background: transparent; }
+    .button-secondary:hover { background: var(--paper-deep); }
+    .snapshot { position: relative; padding: 27px; background: var(--dark); color: var(--white); border-radius: 4px; box-shadow: 14px 14px 0 var(--paper-deep); }
+    .snapshot::before { content: "FIELD NOTES / 2026"; display: block; padding-bottom: 19px; margin-bottom: 23px; border-bottom: 1px solid #ffffff26; color: #d9a08c; font: 10px var(--mono); letter-spacing: .1em; }
+    .snapshot-title { margin: 0 0 20px; font: 400 34px/1.05 var(--serif); }
+    .snapshot-title em { color: #e8a58d; }
+    .metric-list { display: grid; gap: 0; }
+    .metric { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 13px 0; border-top: 1px solid #ffffff20; }
+    .metric strong { color: #f0b39c; font: 500 21px var(--serif); white-space: nowrap; }
+    .metric span { color: #c2c7ce; font-size: 10px; text-align: right; }
+    .snapshot-note { margin: 17px 0 0; color: #b9c0c8; font-size: 10px; }
+    section { padding: 75px 0; border-top: 1px solid var(--line); scroll-margin-top: 88px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+    .section-num { color: var(--accent); font: 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    h2 { margin: 9px 0 0; font: 400 clamp(39px, 5.2vw, 66px)/.97 var(--serif); letter-spacing: -.03em; }
+    .section-note { max-width: 350px; margin: 0; color: var(--muted); font-size: 12px; }
+    .about-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 48px; align-items: start; }
+    .about-copy { max-width: 690px; color: var(--ink-soft); font-size: 17px; }
+    .about-copy strong { color: var(--ink); font-weight: 700; }
+    .aside-note { padding: 24px; background: var(--paper-deep); border-left: 3px solid var(--accent); }
+    .aside-note p { margin: 0; font: 400 25px/1.17 var(--serif); }
+    .aside-note small { display: block; margin-top: 16px; color: var(--muted); font: 9px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .project { display: flex; flex-direction: column; min-height: 265px; padding: 24px; background: var(--white); border: 1px solid var(--line); transition: transform .2s, border-color .2s; }
+    .project:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .project-label { display: flex; justify-content: space-between; gap: 10px; color: var(--accent); font: 9px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .project h3 { margin: 24px 0 9px; font: 400 31px/1.05 var(--serif); }
+    .project p { margin: 0; color: var(--muted); font-size: 12px; }
+    .project-detail { margin-top: auto; padding-top: 20px; color: var(--ink-soft); font-size: 10px; }
+    .project-detail strong { color: var(--ink); }
+    .timeline { border-top: 1px solid var(--line); }
+    .role { display: grid; grid-template-columns: 190px 1fr; gap: 30px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .role-date { color: var(--muted); font: 10px var(--mono); letter-spacing: .03em; }
+    .role h3 { margin: 0; font: 500 23px/1.2 var(--sans); letter-spacing: -.04em; }
+    .company { margin: 4px 0 12px; color: var(--accent); font-size: 12px; font-weight: 700; }
+    .role p { max-width: 760px; margin: 0; color: var(--muted); font-size: 12px; }
+    .role ul { display: grid; gap: 6px; margin: 13px 0 0; padding-left: 17px; color: var(--ink-soft); font-size: 12px; }
+    .role li::marker { color: var(--accent); }
+    .education { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; padding: 25px; background: var(--dark); color: var(--white); }
+    .education .label { color: #e8a58d; font: 9px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .education h3 { margin: 11px 0 4px; font: 400 35px/1.05 var(--serif); }
+    .education p { margin: 0; color: #c4cad0; font-size: 12px; }
+    .education-date { padding-left: 20px; border-left: 1px solid #ffffff30; color: #f0b39c; font: 11px var(--mono); white-space: nowrap; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill { padding: 9px 12px; border: 1px solid var(--line); color: var(--ink-soft); font-size: 10px; }
+    .subhead { margin: 32px 0 12px; color: var(--muted); font: 9px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .credential-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .credential { min-height: 80px; display: flex; align-items: center; gap: 14px; padding: 17px; border: 1px solid var(--line); background: #ffffff66; font-size: 12px; font-weight: 600; }
+    .credential-index { color: var(--accent); font: 10px var(--mono); }
+    .community { display: grid; grid-template-columns: 180px 1fr; gap: 30px; padding: 26px; background: var(--paper-deep); }
+    .community-label { color: var(--accent); font: 9px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .community h3 { margin: 0 0 7px; font: 400 28px/1.1 var(--serif); }
+    .community p { max-width: 720px; margin: 0; color: var(--ink-soft); font-size: 12px; }
+    .contact-panel { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding: 34px; background: var(--accent); color: #fffaf5; }
+    .contact-panel .section-num { color: #f7d3c6; }
+    .contact-panel h2 { max-width: 600px; font-size: clamp(43px, 6vw, 74px); }
+    .contact-panel p { margin: 12px 0 0; color: #ffe7de; font-size: 12px; }
+    .contact-links { display: flex; flex-direction: column; gap: 8px; min-width: 190px; }
+    .contact-links a { padding: 9px 0; border-bottom: 1px solid #ffffff55; font-size: 12px; font-weight: 700; }
+    .contact-links a:hover { color: #20232b; }
+    footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px 0; color: var(--muted); font: 9px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; gap: 35px; padding-top: 62px; }
+      .snapshot { max-width: 560px; }
+      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .role { grid-template-columns: 1fr; gap: 8px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(var(--max), calc(100% - 32px)); }
+      .nav { min-height: 70px; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 12px 0; }
+      .nav-links { order: 3; width: 100%; justify-content: space-between; gap: 10px; padding-bottom: 5px; font-size: 10px; }
+      .nav-cta { padding: 7px 10px; font-size: 9px; }
+      .hero { padding: 52px 0 56px; }
+      h1 { font-size: clamp(55px, 16vw, 82px); }
+      .hero-copy { font-size: 14px; }
+      section { padding: 57px 0; }
+      .project-grid, .credential-grid { grid-template-columns: 1fr; }
+      .project { min-height: 230px; }
+      .education { grid-template-columns: 1fr; gap: 17px; }
+      .education h3 { font-size: 30px; }
+      .education-date { padding: 0; border: 0; }
+      .community { grid-template-columns: 1fr; gap: 10px; padding: 21px; }
+      .contact-panel { align-items: start; flex-direction: column; padding: 25px; }
+      .contact-links { width: 100%; }
+      footer { flex-direction: column; gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="wrap nav">
+      <a class="brand" href="#top">ATHARV <span>SONAWANE</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#toolkit">Toolkit</a>
+      </div>
+      <a class="nav-cta" href="#contact">Get in touch ↗</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero wrap" id="top">
+      <div>
+        <div class="eyebrow">Equity research · Valuation · Finance</div>
+        <h1>Numbers tell<br>stories. <em>I find them.</em></h1>
+        <p class="hero-copy">I’m Atharv Sonawane, an analytical finance student with hands-on equity research experience in India’s IT services sector. I turn company fundamentals into clear valuation work and research-led writing.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+          <a class="button button-secondary" href="mailto:atharvsonawane970@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="snapshot" aria-label="Research highlights">
+        <p class="snapshot-title">Research,<br><em>with reach.</em></p>
+        <div class="metric-list">
+          <div class="metric"><strong>900K+</strong><span>LinkedIn impressions</span></div>
+          <div class="metric"><strong>20+</strong><span>research-led posts</span></div>
+          <div class="metric"><strong>100 days</strong><span>structured equity research</span></div>
+        </div>
+        <p class="snapshot-note">Project work focused on Indian IT services, valuation and company fundamentals.</p>
+      </aside>
+    </header>
+
+    <section id="about">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="section-num">01 / About</div><h2>Analytical by habit.<br>Curious by nature.</h2></div>
+          <p class="section-note">A finance profile built around careful research, clear communication and practical modelling.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">My work sits at the intersection of <strong>financial analysis and communication.</strong> I’ve researched company fundamentals, built DCF and multiples valuations, and translated sector trends into accessible content. I’m now looking for an analyst role where I can apply that valuation work to investment and strategic finance decisions.</div>
+          <aside class="aside-note">
+            <p>Good analysis makes the assumptions visible—and the decision clearer.</p>
+            <small>How I approach the work</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="section-num">02 / Selected work</div><h2>From filings<br>to findings.</h2></div>
+          <p class="section-note">Research and modelling completed during a structured project on the Indian IT services sector.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-label"><span>Company analysis</span><span>01</span></div>
+            <h3>HCL Technologies</h3>
+            <p>End-to-end fundamental analysis using the FY2026 annual report, with a five-year view of revenue, EBIT margins and free cash flow.</p>
+            <div class="project-detail"><strong>Valuation:</strong> DCF and comparable multiples · Revenue modelled at ₹1,30,144 Cr</div>
+          </article>
+          <article class="project">
+            <div class="project-label"><span>Acquisition impact</span><span>02</span></div>
+            <h3>Strategic modelling</h3>
+            <p>Modelled the impact of IBM’s $1.8B software acquisition and estimated the annual EBIT contribution and return profile.</p>
+            <div class="project-detail"><strong>Estimate:</strong> $370M annual EBIT contribution · ~22.6% ROIC</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="section-num">03 / Experience</div><h2>Research in practice.</h2></div>
+          <p class="section-note">A focused project combining financial modelling with public-facing research communication.</p>
+        </div>
+        <div class="timeline">
+          <article class="role">
+            <div class="role-date">JUN 2026 — OCT 2026</div>
+            <div>
+              <h3>Equity Research Analyst</h3>
+              <div class="company">The Valuation School · Raver, Jalgaon</div>
+              <p>Completed a 100-day structured equity research project focused on the Indian IT services sector.</p>
+              <ul>
+                <li>Published 20+ research-driven LinkedIn posts on industry dynamics, valuation and company fundamentals.</li>
+                <li>Generated 900,000+ LinkedIn impressions through original research on HCL Technologies and sector analysis.</li>
+                <li>Built end-to-end DCF and multiples valuations, including detailed company and acquisition-impact modelling.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="section-num">04 / Education</div><h2>Learning the language<br>of business.</h2></div>
+          <p class="section-note">Business administration at the Indian Institute of Management Bangalore.</p>
+        </div>
+        <article class="education">
+          <div>
+            <div class="label">Bachelor’s degree</div>
+            <h3>Bachelor of Business Administration</h3>
+            <p>Indian Institute of Management Bangalore · Bangalore</p>
+            <p>IIM Bangalore Entrance Test · 52 marks</p>
+          </div>
+          <div class="education-date">Expected Oct 2029</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="toolkit">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="section-num">05 / Toolkit</div><h2>Skills & credentials.</h2></div>
+          <p class="section-note">A growing toolkit for financial analysis, research and communicating what the numbers mean.</p>
+        </div>
+        <div class="skill-list" aria-label="Skills">
+          <span class="skill">Financial valuation</span><span class="skill">DCF modelling</span><span class="skill">Equity valuation</span><span class="skill">Fundamental analysis</span><span class="skill">Financial ratio analysis</span><span class="skill">Sector analysis</span><span class="skill">Research</span><span class="skill">Data analysis</span><span class="skill">Advanced Excel</span><span class="skill">Python</span><span class="skill">Data handling</span><span class="skill">Content writing</span><span class="skill">LinkedIn content strategy</span><span class="skill">Data storytelling</span><span class="skill">Carousel design</span><span class="skill">Microsoft Word</span><span class="skill">Communication</span><span class="skill">Leadership</span><span class="skill">Deadline management</span><span class="skill">Bilingual</span><span class="skill">English</span>
+        </div>
+        <div class="subhead">Certificates & programmes</div>
+        <div class="credential-grid">
+          <div class="credential"><span class="credential-index">01</span>Advanced Valuation & Financial Modelling</div>
+          <div class="credential"><span class="credential-index">02</span>Executive Certificate in Fintech and AI</div>
+          <div class="credential"><span class="credential-index">03</span>Quantitative Finance Bootcamp</div>
+          <div class="credential"><span class="credential-index">04</span>Data Science and Machine Learning Bootcamp</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="section-num">06 / Community</div><h2>Making room<br>for more learners.</h2></div>
+          <p class="section-note">A volunteer experience centered on access to education.</p>
+        </div>
+        <article class="community">
+          <div class="community-label">Volunteer work</div>
+          <div>
+            <h3>Sahara Society · IIT Madras</h3>
+            <p>Supported underprivileged students by distributing notebooks, pens, pencils and learning resources, helping improve access to education and continuity in learning for students from economically weaker backgrounds.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap reveal">
+        <div class="contact-panel">
+          <div>
+            <div class="section-num">07 / Contact</div>
+            <h2>Let’s talk<br>about the numbers.</h2>
+            <p>Open to analyst opportunities and conversations in finance.</p>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:atharvsonawane970@gmail.com">atharvsonawane970@gmail.com ↗</a>
+            <a href="tel:8446365685">8446365685 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap"><span>© <span id="year"></span> Atharv Sonawane</span><span>Research · Valuation · Clear thinking</span></footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
+
+
